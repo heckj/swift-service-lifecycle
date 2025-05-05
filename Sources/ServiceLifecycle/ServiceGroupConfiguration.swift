@@ -62,14 +62,12 @@ public struct ServiceGroupConfiguration: Sendable {
             }
 
             internal let behavior: _TerminationBehavior
-
             /// Cancel the service group.
             public static let cancelGroup = Self(behavior: .cancelGroup)
             /// Gracefully shut down the service group.
             public static let gracefullyShutdownGroup = Self(behavior: .gracefullyShutdownGroup)
             /// Ignore the completion of the service.
             public static let ignore = Self(behavior: .ignore)
-
             /// A string representation of the behavior when a service finishes running.
             public var description: String {
                 switch self.behavior {
